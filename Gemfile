@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem  'coderay', '~>1.1.3'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -56,6 +56,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'pry-rails'
-gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
-gem 'active_hash'
