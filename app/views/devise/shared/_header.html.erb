@@ -1,0 +1,21 @@
+<header class="top-page-header">
+  <div class="title-box">
+     <%= link_to 'Re:ST!!', root_path, class: "toppage-bottun" %>
+  </div>
+  <% if user_signed_in? && current_user.admin? %>
+  <div class="nav">
+      <div class="sign-button"><%= link_to '管理者用ページ', admin_restaurants_path, class: "signout button" %></div>
+      <div class="sign-button"><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "signout button" %></div>
+  </div>
+  <% elsif user_signed_in? %>
+    <div class="nav">
+      <div class="sign-button"><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "signout button" %></div>
+      <div class="sign-button">予約状況確認</div>
+  </div>
+  <% else %>
+  <div class="nav">
+      <div class="sign-button"><%= link_to 'SIGN IN', user_session_path, class: "signup button" %></div>
+      <div class="sign-button"><%= link_to 'SIGN UP', new_user_registration_path, class: "signin button" %></div>
+  </div>
+  <% end %>
+</header>

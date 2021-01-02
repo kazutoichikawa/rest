@@ -1,0 +1,55 @@
+.top-page-header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color:#ffcc33;
+  border-bottom: solid 10px #666666 ;
+}
+
+.title-box a {
+  width: 15vw;
+  height: 60px;
+  margin: 20px 40px;
+  background-color: #ffcc33;
+  border-bottom: solid 3px #666666;
+  display: flex;
+  font-weight: bold;
+  font-size: 40px;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+.nav {
+  width: 400px;
+  margin: 20px 30px;
+  height: 60px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  line-height: 20px;
+}
+
+.sign-button{
+  text-decoration: none; 
+  width :150px;
+  padding: 8px;
+  margin: 10px 10px 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  background: #ffcc33;
+  border: solid 3px #666666;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button{
+  text-decoration: none;
+}
+
+.login-flash-message{
+  text-align: center;
+  color: red;
+}
