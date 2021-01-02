@@ -1,0 +1,156 @@
+.main {
+  background-color:  #ffcc33;
+  width: 100vw;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-area {
+  width: 30%;
+  height: 98%;
+  background-color: white;
+  border: solid 3px #666666;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.right-area {
+  width: 65%;
+  height: 98%;
+  background-color: white;
+  border: solid 3px #666666;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.shop, .search-value {
+  width: 100%;
+  border-bottom: solid 3px #666666;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  border-bottom: solid 3px #666666;
+}
+
+.shop-group {
+  height: 100%;
+}
+
+.shop-list{
+  height: 500px;
+  width: 100%;
+
+}
+
+.shop-detail-group {
+  width: 100%;
+  height: 200px;
+  border-bottom: solid 3px #666666;
+  display: flex;
+}
+
+.shop-image {
+  width: 400px;
+  border-right: solid 3px #666666;
+}
+
+.shop-reserve-group {
+  width: calc(100% - 200px);
+  height: 200px;
+}
+
+.title-address-genre {
+  display: flex;
+  border-bottom: solid 3px #666666;
+}
+
+.index-title {
+  height: 25px;
+  width: 33%;
+  border-right: solid 3px #666666;
+}
+
+.index-genre {
+  height: 25px;
+  width: 30%;
+  border-right: solid 3px #666666;
+}
+
+.index-address {
+  height: 25px;
+  width: 37%;
+}
+
+
+.shop-show-button {
+  display: flex;
+  height: 52px;
+}
+
+
+.shop-image {
+  width: 200px;
+  height: 200px;
+}
+
+.shop-tags {
+  height: 120px;
+  display: flex;
+  justify-content: left;
+  border-bottom: solid 3px #666666;
+}
+.tag-list {
+  height: 28px;
+  padding: 10px 5px 0px 5px;
+  margin: 10px 0px 5px 8px;
+  font-size: 12px;
+  text-align: center;
+  border: solid 2px #666666;
+  border-radius: 10px;
+  background-color: lightyellow;
+}
+
+.shop-show {
+  width: 100%;
+  padding: auto;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: brown;
+  font-size: 25px;
+  border-bottom: solid 3px #666666;
+}
+
+
+.form {
+  border: solid 3px #666666;
+  border-radius: 10px;
+  height: 80px;
+  margin: 10px 10px 0 10px;
+}
+
+.search-form {
+  height: 100%;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 20px;
+  border-bottom: solid 3px #666666;
+}
+
+
+.form-tag {
+  border: solid 3px #666666;
+  border-radius: 10px;
+  height: calc(100% - 260px);
+  margin: 10px;
+}
+
+.tag {
+  display: flex;
+  justify-content: left;
+}
