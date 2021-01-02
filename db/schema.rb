@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_085809) do
+ActiveRecord::Schema.define(version: 2021_01_02_140039) do
+
+  create_table "shops", charset: "utf8", force: :cascade do |t|
+    t.string "shop_name", null: false
+    t.integer "genre_id", null: false
+    t.text "profile", null: false
+    t.string "p_num", null: false
+    t.string "p_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "building"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shops_on_user_id"
+  end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +48,5 @@ ActiveRecord::Schema.define(version: 2021_01_02_085809) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shops", "users"
 end
