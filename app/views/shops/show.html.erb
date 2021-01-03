@@ -66,11 +66,23 @@
             <h2>口コミ</h2>
           </div>
           <div class="review-box reviews">
-
+            <% @reviews.each do |review| %>
+              <div class="review-text"><%= review.text %></div>
+              <div class="review-user-time">
+                <%= "#{review.user.name}  #{l review.created_at}" %>
+              </div>
+            <% end %>
           </div>
         </div>
            <div class="review-form">
-
+            <% if user_signed_in? %>
+              <%= form_with(model: [@shop, @review], local: true) do |form| %>
+                <%= form.text_area :text, placeholder: "100字以内", class:"review-text", rows: "2" %>
+                <%= form.submit "レビューを投稿する", class: "review-form-button" %>
+              <% end %>
+            <% else %>
+              <div class="review-form">口コミの投稿には新規登録/ログインが必要です</div>
+            <% end %>
             </div>
         
 
