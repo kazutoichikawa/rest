@@ -14,7 +14,7 @@ class Shop < ApplicationRecord
       validates :shop_name , length: { maximum: 40 }
       validates :profile,    length: { maximum: 1000 }
       validates :p_num,      format: { with: /\A0(\d{1}[-(]?\d{4}|\d{2}[-(]?\d{3}|\d{3}[-(]?\d{2}|\d{4}[-(]?\d{1})[-)]?\d{4}\z|\A0[5789]0[-]?\d{4}[-]?\d{4}\z/},
-                             length: { in: 1..12 }  
+                             length: { in: 1..13 }  
       validates :p_code,     format: { with: /\A\d{3}[-]\d{4}\z/}
       validates :city
       validates :address
