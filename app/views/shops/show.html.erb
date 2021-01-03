@@ -1,0 +1,94 @@
+<%= render partial: "devise/shared/header" %>
+<div class="main-show">
+  <div class="shop-header">
+    <div class="shop-title-show">
+      <%= @shop.shop_name %>
+    </div>
+    <div class="shop-genre-tags">
+      <div class="shop-genre-show">
+        <%= @shop.genre.name %>
+      </div>
+      <div class="shop-tags-show">
+      <ul class="tags-show">
+          <% @shop.tags.each do |tag| %>
+          <li class="tag-list">
+            <%=tag.name%>
+          </li>
+          <%end%>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="contents-show">
+    <div class="area-show">
+      <div class="shop-image-box-show">
+        <%= image_tag @shop.image , class: 'shop-image-show'%>
+      </div>
+
+      <div class="group-show">
+        <div class="shop-profile-title">
+          <h1>ショッププロフィール</h1>
+        </div>
+
+        <div class="shop-profile-show">
+          <%= @shop.profile %>
+        </div>
+      </div>
+
+      <div class="detail-show">
+        <div class="shop-profile-title">
+          <h1>店舗基本情報</h1>
+        </div>
+        <div class="shop-info-box show">
+          <div class="shop-box pnum">
+            <div class="shop-info-title show">
+              <h2>予約・お問い合わせ</h2>
+            </div>
+            <div class="info p-num"><%= @shop.p_num %></div>
+          </div>
+        </div>
+
+        <div class="shop-info-box show">
+          <div class="shop-box pnum">
+            <div class="shop-info-title show">
+              <h2>所在地</h2>
+            </div>
+            <div class="p-code-address">
+              <div class="info p-code">〒<%= @shop.p_code %></div>
+              <div class="info address"><%= @shop.prefecture.name + @shop.city + @shop.address + @shop.building %></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="shop-review-box show">
+          <div class="shop-profile-title">
+            <h2>口コミ</h2>
+          </div>
+          <div class="review-box reviews">
+
+          </div>
+        </div>
+           <div class="review-form">
+
+            </div>
+        
+
+      <div class="shop-info-box show">
+        <% if user_signed_in? && current_user.admin? %>
+          <div class="admin show">
+            <div><%= link_to '戻る', root_path, class: "admin-button" %></div>
+            <div><%= link_to '編集', root_path, class: "admin-button" %></div>
+            <div><%= link_to '削除', root_path, method: :delete, class: "admin-button" %></div>
+          </div>
+        <% elsif user_signed_in? %>
+          <div class="admin show">
+            <div><%= link_to '戻る', root_path, class: "admin-button" %></div>
+            <div><%= link_to 'ネット予約', root_path, class: "admin-button" %></div>
+          </div>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

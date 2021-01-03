@@ -1,0 +1,142 @@
+.main-show {
+  background-color:  #ffcc33;
+  width: 100vw;
+  padding: 10px 0;
+}
+
+.shop-header {
+  width: 100vw;
+  border-bottom: solid 3px #666666;
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+}
+
+.shop-title-show {
+  font-size: 40px;
+}
+
+.shop-genre-tags {
+  display: flex;
+  
+}
+
+.tags-show {
+  width: 400px;
+  display: flex;
+}
+
+.shop-genre-show{
+  display: flex;
+  padding: 28px 20px 0px 5px; 
+}
+
+.contents-show {
+  display: flex;
+  justify-content:center;
+  padding: 10px 0;
+}
+
+.area-show {
+  width: 60%;
+  padding: 5px 0;
+  background-color: white;
+  border: solid 3px #666666;
+  border-radius: 10px;
+}
+
+.shop-image-box-show {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
+.shop-image-show {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.group-show{
+  margin: 10px  auto;
+  width: 90%;
+  border-bottom: solid 1px #666666;
+}
+
+.detail-show{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.shop-profile-title {
+  margin: 15px 0;
+  border-bottom: solid 1px #666666;
+}
+
+.shop-info-box {
+  border-bottom: solid 1px #999999;
+}
+
+.shop-box {
+  display: flex;
+  justify-content: left;
+  margin: 10px 0;
+}
+
+.shop-info-title {
+  width: 30%;
+}
+
+.info {
+ margin-left: 30px;
+}
+
+.admin {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0 20px 0;
+}
+
+.admin-button {
+  border: solid 2px #666666;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 30px;
+  background-color: brown;
+  color: white;
+  text-decoration: none;
+}
+
+.shop-review-box {
+  height: 200px;
+  margin: 10px 0;
+  border: solid 2px #666666;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.review-box {
+  border-bottom: solid 1px #666666;
+  margin: 10px;
+}
+
+.review-user-time {
+  font-size: 14px;
+  text-align: right;
+}
+
+.review-form {
+  text-align: center;
+}
+
+.review-text{
+  height: 38px;
+}
+
+.review-form-button {
+  padding: 5px;
+  margin-left: 5px;
+  color: white;
+  background-color: navy;
+}
