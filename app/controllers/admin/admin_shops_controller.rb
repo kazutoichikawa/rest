@@ -1,6 +1,6 @@
 class Admin::AdminShopsController < ApplicationController
   before_action :if_not_admin
-  before_action :set_shop , only:[:edit, :update, :deftroy]
+  before_action :set_shop , only:[:edit, :update, :destroy]
   def index
     
   end

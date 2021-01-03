@@ -79,7 +79,7 @@
           <div class="admin show">
             <div><%= link_to '戻る', root_path, class: "admin-button" %></div>
             <div><%= link_to '編集', edit_admin_admin_shop_path, class: "admin-button" %></div>
-            <div><%= link_to '削除', root_path, method: :delete, class: "admin-button" %></div>
+            <div><%= link_to '削除', admin_admin_shop_path, method: :delete, class: "admin-button" %></div>
           </div>
         <% elsif user_signed_in? %>
           <div class="admin show">
