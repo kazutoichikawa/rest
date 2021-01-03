@@ -1,20 +1,12 @@
 class Admin::AdminShopsController < ApplicationController
   before_action :if_not_admin
-  before_action :set_shop , only:[:edit, :update]
+  before_action :set_shop , only:[:edit, :update, :destroy]
   def index
     
   end
 
   def new
     @shop= Shop.new
-  end
-
-  def edit
-    
-  end
-
-  def update
-    @shop.update(shop_params)
   end
 
   def create
@@ -25,6 +17,17 @@ class Admin::AdminShopsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @shop.update(shop_params)
+  end
+
+  def destroy
+    @shop.destroy
   end
 
 
