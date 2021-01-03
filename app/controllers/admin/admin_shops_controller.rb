@@ -1,11 +1,20 @@
 class Admin::AdminShopsController < ApplicationController
   before_action :if_not_admin
+  before_action :set_shop , only:[:edit, :update]
   def index
     
   end
 
   def new
     @shop= Shop.new
+  end
+
+  def edit
+    
+  end
+
+  def update
+    @shop.update(shop_params)
   end
 
   def create
@@ -28,6 +37,10 @@ private
 
   def shop_params
     params.require(:shop).permit(:image, :shop_name, :genre_id, :profile, :p_num, :p_code, :prefecture_id, :city, :address, :building, tag_ids: []).merge(user_id: current_user.id)
+  end
+
+  def set_shop
+    @shop = Shop.find(params[:id])
   end
 
 end
