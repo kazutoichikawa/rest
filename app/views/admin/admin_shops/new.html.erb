@@ -1,0 +1,110 @@
+<%#= render "devise/shared/second-header"%>
+
+<%= form_with model: @shop, url: admin_admin_shops_path, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      店舗情報入力
+    </h1>
+  </div>
+
+  <%= render 'devise/shared/error_messages', model: f.object %>
+  <div class="form-group">
+    <div class="img-upload">
+        <div class="form-text">
+          店舗画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">店名</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :shop_name, class:"input-default", id:"shop-name", placeholder:"40字以内", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text">
+      ジャンル
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"shop-genre"}) %>
+  </div>
+
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">タグ</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="col-md-4 checkbox-list">
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name ) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">店舗プロフィール</label>
+      <span class="indispensable">必須</span>
+    </div>
+      <div class='input-profile-wrap'>
+        <%= f.text_area :profile, class:"input-default profile", id:"profile", placeholder:"400字以内", maxlength:"400"%>
+      </div>
+  </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">電話番号</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :p_num, class:"input-default", id:"p_num", placeholder:"例)080-1234-5678" %>
+  </div>
+
+  <div><h1 class="input-headline">
+      所在地入力
+    </h1></div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">郵便番号</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :p_code, class:"input-default", id:"postal-code", placeholder:"例)123-4567", maxlength:"8" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text">
+      都道府県
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"shop--preficture"}) %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">市町村</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :city, class:"input-default", id:"shop-city", placeholder:"市町村を入力" %>
+  </div>
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">番地</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :address, class:"input-default", id:"shop-address", placeholder:"番地を入力" %>
+  </div>
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">建物名</label>
+    </div>
+    <%= f.text_field :building, class:"input-default", id:"shop-building", placeholder:"建物名を入力" %>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit "店舗を登録する" ,class:"add-shop-btn" %>
+  </div>
+</div>
+<% end %>
+
+<%#= render "devise/shared/second-footer"%>

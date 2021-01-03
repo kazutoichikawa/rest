@@ -12,7 +12,7 @@ class Admin::AdminShopsController < ApplicationController
     @shop = Shop.create(shop_params)
     if @shop.valid?
       @shop.save
-      redirect_to admin_restaurants_path
+      redirect_to admin_admin_shops_path
     else
       render :new
     end
