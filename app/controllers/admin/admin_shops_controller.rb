@@ -30,7 +30,6 @@ class Admin::AdminShopsController < ApplicationController
     @shop.destroy
   end
 
-
 private
   def if_not_admin
     unless current_user.admin?

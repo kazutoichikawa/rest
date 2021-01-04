@@ -154,3 +154,18 @@
   display: flex;
   justify-content: left;
 }
+
+.radio-buttons-list {
+  display:block;
+}
+
+.checkbox-list input[type="radio_buttons"] {
+  display: inline-block;
+  width: 10%;
+}
+
+.checkbox-list input[type="radio_buttons"] + label {
+  display: inline-block;
+  margin-left: 10%;
+  width: 80%;
+}

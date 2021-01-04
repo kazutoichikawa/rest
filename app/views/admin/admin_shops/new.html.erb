@@ -40,6 +40,7 @@
       <label class="form-text">タグ</label>
       <span class="indispensable">必須</span>
     </div>
+  </div>
     <div class="col-md-4 checkbox-list">
       <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name ) %>
     </div>

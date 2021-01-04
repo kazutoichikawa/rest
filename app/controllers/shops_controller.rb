@@ -2,6 +2,7 @@ class ShopsController < ApplicationController
   before_action :set_shop, only:[:show]
   before_action :search_shop, only: [:index, :search]
   def index
+    @p = Shop.ransack(params[:q])
     @shops = Shop.all.order("created_at DESC")
   end
 
@@ -11,18 +12,24 @@ class ShopsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:category)  # 検索条件にマッチした商品の情報を取得
+    @p = Shop.ransack(params[:q])
+    @p = Shop.search(search_params)
+    @results = @p.result(distinct: true)
   end
-
 
   private
   def set_shop
     @shop = Shop.find(params[:id])
   end
 
-  def search_shop
-    @p = Product.ransack(params[:q])  # 検索オブジェクトを生成
+  def search_params
+    params.require(:q).permit(:genre_id_eq, :prefecture_id_eq, shop_tag_relations_tag_id_in:[])
   end
 
-
+  def search_shop
+    @shops = Shop.all.order("created_at DESC")
+    @genres = Genre.all
+    @prefectures = Prefecture.all
+    @tags = Tag.all
+  end
 end

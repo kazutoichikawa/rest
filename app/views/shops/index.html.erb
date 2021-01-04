@@ -5,7 +5,27 @@
     <div class="form-title">検索フォーム</div>
 
     <div class="search-form">
+      <%= search_form_for @p, url: search_path do |f| %>
+        <div class="form form-genre">
+          <%= f.label :genre_eq, 'ジャンル' %>
+          <%= f.collection_select :genre_id_eq, @genres, :id, :name,  include_blank: '指定なし' %>
+          <br>
+        </div>
 
+        <div class="form form-address">
+          <%= f.label :prefecture_eq, '所在地' %>
+          <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name,  include_blank: '指定なし' %>
+          <br>
+        </div>
+        <div class="form form-tag">
+          <div class="col-md-4 radio-buttons-list">
+            <%= f.label :shop_tag_relations_tag_id_in, 'こだわり条件' %>
+            <%= f.collection_check_boxes :shop_tag_relations_tag_id_in, @tags, :id, :name %>
+            <br>
+          </div>
+        </div>
+        <%= f.submit '検索' %>
+      <% end %>
     </div>
   </div>
   <div class="right-area">
@@ -16,34 +36,7 @@
     <div class="shop-group">
       <div class="shop-list">
        <% @shops.each do |shop| %>
-        <div class="shop-detail-group">
-          <div class="shop-image">
-            <%= image_tag shop.image , class: 'shop-image'%>
-          </div>
-
-          <div class="shop-reserve-group">
-
-              <div class="title-address-genre">
-                <div class="index-title"><%= shop.shop_name %></div>
-                <div class="index-genre"><%= shop.genre.name %></div>
-                <div class="index-address"><%= shop.prefecture.name %></div>
-              </div>
-
-            <div class="shop-tags">
-              <ul class="tag">
-                  <% shop.tags.each do |tag| %>
-                  <li class="tag-list">
-                    <%=tag.name%>
-                  </li>
-                  <%end%>
-              </ul>
-            </div>
-
-              <div class="shop-show-button">
-              <%= link_to '店舗詳細確認・予約', shop_path(shop), class: "shop-show" %>
-              </div>
-          </div>
-        </div>
+        <%= render partial: "shops/shops", locals: {shop: shop} %>
        <% end %>
       </div>
     </div>
