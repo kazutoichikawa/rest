@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
     @review = Review.new
     @reviews = @shop.reviews.includes(:user)
   end
