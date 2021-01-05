@@ -1,0 +1,28 @@
+<div class="shop-detail-group">
+  <div class="shop-image">
+    <%= image_tag shop.image , class: 'shop-image'%>
+  </div>
+
+  <div class="shop-reserve-group">
+
+      <div class="title-address-genre">
+        <div class="index shop-name"><%= shop.shop_name %></div>
+        <div class="index genre"><%= shop.genre.name %></div>
+        <div class="index address"><%= shop.prefecture.name %></div>
+      </div>
+
+    <div class="shop-tags">
+      <ul class="tag">
+          <% shop.tags.each do |tag| %>
+          <li class="tag-list">
+            <%=tag.name%>
+          </li>
+          <%end%>
+      </ul>
+    </div>
+
+      <div class="shop-show-button">
+      <%= link_to '店舗詳細確認・予約', shop_path(shop), class: "shop-show" %>
+      </div>
+  </div>
+</div>
