@@ -14,7 +14,7 @@
           <li class="tag-list">
             <%=tag.name%>
           </li>
-          <%end%>
+          <% end %>
       </ul>
       </div>
     </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="p-code-address">
               <div class="info p-code">〒<%= @shop.p_code %></div>
-              <div class="info address"><%= @shop.prefecture.name + @shop.city + @shop.address + @shop.building %></div>
+              <div class="info show-address"><%= @shop.prefecture.name + @shop.city + @shop.address + @shop.building %></div>
             </div>
           </div>
         </div>
