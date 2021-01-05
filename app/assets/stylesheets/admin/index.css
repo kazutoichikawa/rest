@@ -45,13 +45,34 @@
   border-radius: 10px;
 }
 
-.menu {
+.admin-menu {
   width :250px;
   height: 30px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   border-radius: 10px;
   border: solid 2px #666666;
+}
+
+.search-form-title {
+  border-bottom: solid 1px #666666;
+  margin: 2px 5px 2px 5px;
+  text-align: center;
+}
+
+.select {
+  margin-left: 5px;
+}
+
+
+.search-button {
+  text-align: center;
+}
+.submit-button {
+  margin-bottom: 10px;
+  width: 100px;
+  color: white;
+  background-color: navy;
+  border-radius: 10px;
 }

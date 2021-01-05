@@ -1,112 +1,60 @@
 
 <%= render partial: "devise/shared/header"%>
 <div class="main">
-  <div class="left-area">
+  <div class="left-area  menu">
     <div class="form-title">検索フォーム</div>
 
     <div class="search-form">
       <%= search_form_for @p, url: search_path do |f| %>
         <div class="form form-genre">
-          <%= f.label :genre_eq, 'ジャンル' %>
-          <%= f.collection_select :genre_id_eq, @genres, :id, :name,  include_blank: '指定なし' %>
+          <div class="search-form-title"><%= f.label :genre_eq, 'ジャンル' %></div>
+          <div class="col-md-4 select">
+          <%= f.collection_select :genre_id_eq, @genres, :id, :name, {include_blank: "指定なし"} %>
           <br>
+          </div>
         </div>
 
         <div class="form form-address">
-          <%= f.label :prefecture_eq, '所在地' %>
-          <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name,  include_blank: '指定なし' %>
+          <div class="search-form-title"><%= f.label :prefecture_eq, '所在地' %></div>
+          <div class="col-md-4 select">
+          <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, {include_blank: "指定なし"} %>
           <br>
+          </div>
         </div>
         <div class="form form-tag">
-          <div class="col-md-4 radio-buttons-list">
-            <%= f.label :shop_tag_relations_tag_id_in, 'こだわり条件' %>
+            <div class="search-form-title"><%= f.label :shop_tag_relations_tag_id_in, 'こだわり条件' %></div>
+            <div class="col-md-4 checkbox-list">
             <%= f.collection_check_boxes :shop_tag_relations_tag_id_in, @tags, :id, :name %>
             <br>
           </div>
         </div>
-        <%= f.submit '検索' %>
+        <div class="search-button"><%= f.submit '検索',{class: 'submit-button'} %></div>
       <% end %>
     </div>
   </div>
-  <div class="right-area">
+  <div class="right-area  menu">
     <div class="shop">
       <div class="title">レストラン一覧</div>
     </div>
     <div class="search-value"></div>
     <div class="shop-group">
       <div class="shop-list">
-
         <% if @results.present? %>
-          <ul class='item-lists'>
+          <ul class='shop-lists'>
             <% @results.each do |shop| %>
-              <div class="shop-detail-group">
-                <div class="shop-image">
-                  <%= image_tag shop.image , class: 'shop-image'%>
-                </div>
-
-                <div class="shop-reserve-group">
-
-                    <div class="title-address-genre">
-                      <div class="index-title"><%= shop.shop_name %></div>
-                      <div class="index-genre"><%= shop.genre.name %></div>
-                      <div class="index-address"><%= shop.prefecture.name %></div>
-                    </div>
-
-                  <div class="shop-tags">
-                    <ul class="tag">
-                        <% shop.tags.each do |tag| %>
-                        <li class="tag-list">
-                          <%=tag.name%>
-                        </li>
-                        <%end%>
-                    </ul>
-                  </div>
-
-                    <div class="shop-show-button">
-                    <%= link_to '店舗詳細確認・予約', shop_path(shop), class: "shop-show" %>
-                    </div>
-                </div>
-              </div>
+              <%= render partial: "shops/shops", locals: {shop: shop} %>
             <% end %>
           </ul>
         <% else %>
-          <div>
-            <p>一致する商品がありません。条件を変えて検索してみよう！</p>
+          <div class="error-messages">
+            一致する店舗がありません。条件を変えてもう一度検索してください。
           </div>
-          <ul class='item-lists'>
+          <ul class='error shop-lists'>
             <% Shop.all.each do |shop| %>
-              <div class="shop-detail-group">
-                <div class="shop-image">
-                  <%= image_tag shop.image , class: 'shop-image'%>
-                </div>
-
-                <div class="shop-reserve-group">
-
-                    <div class="title-address-genre">
-                      <div class="index-title"><%= shop.shop_name %></div>
-                      <div class="index-genre"><%= shop.genre.name %></div>
-                      <div class="index-address"><%= shop.prefecture.name %></div>
-                    </div>
-
-                  <div class="shop-tags">
-                    <ul class="tag">
-                        <% shop.tags.each do |tag| %>
-                        <li class="tag-list">
-                          <%=tag.name%>
-                        </li>
-                        <%end%>
-                    </ul>
-                  </div>
-
-                    <div class="shop-show-button">
-                    <%= link_to '店舗詳細確認・予約', shop_path(shop), class: "shop-show" %>
-                    </div>
-                </div>
-              </div>
+              <%= render partial: "shops/shops", locals: {shop: shop} %>
             <% end %>
           </ul>
         <% end %>
-
       </div>
     </div>
   </div>

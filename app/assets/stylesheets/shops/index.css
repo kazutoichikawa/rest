@@ -6,8 +6,7 @@
   justify-content: space-around;
 }
 
-.left-area {
-  width: 30%;
+.menu {
   height: 98%;
   background-color: white;
   border: solid 3px #666666;
@@ -15,12 +14,13 @@
   justify-content: center;
 }
 
+.left-area {
+  width: 30%;
+ 
+}
+
 .right-area {
   width: 65%;
-  height: 98%;
-  background-color: white;
-  border: solid 3px #666666;
-  border-radius: 10px;
   overflow: scroll;
 }
 
@@ -40,9 +40,7 @@
 }
 
 .shop-list{
-  height: 500px;
   width: 100%;
-
 }
 
 .shop-detail-group {
@@ -67,20 +65,22 @@
   border-bottom: solid 3px #666666;
 }
 
-.index-title {
+
+.index {
   height: 25px;
+  text-align: center;
+}
+.shop-name {
   width: 33%;
   border-right: solid 3px #666666;
 }
 
-.index-genre {
-  height: 25px;
+.genre {
   width: 30%;
   border-right: solid 3px #666666;
 }
 
-.index-address {
-  height: 25px;
+.address {
   width: 37%;
 }
 
@@ -153,19 +153,4 @@
 .tag {
   display: flex;
   justify-content: left;
-}
-
-.radio-buttons-list {
-  display:block;
-}
-
-.checkbox-list input[type="radio_buttons"] {
-  display: inline-block;
-  width: 10%;
-}
-
-.checkbox-list input[type="radio_buttons"] + label {
-  display: inline-block;
-  margin-left: 10%;
-  width: 80%;
 }

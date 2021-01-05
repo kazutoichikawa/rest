@@ -18,9 +18,7 @@ class Shop < ApplicationRecord
       validates :p_code,     format: { with: /\A\d{3}[-]\d{4}\z/}
       validates :city
       validates :address
-        with_options numericality: { other_than: 1 } do
-          validates :genre_id
-          validates :prefecture_id
-        end
+      validates :genre_id
+      validates :prefecture_id
     end
 end
