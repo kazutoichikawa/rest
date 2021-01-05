@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :shops
+  has_many :reservations, dependent: :destroy
   has_many :reviews
   with_options presence: true do
     validates :name

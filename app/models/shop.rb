@@ -4,6 +4,7 @@ class Shop < ApplicationRecord
   belongs_to :prefecture
 
   belongs_to :user
+  has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :shop_tag_relations, dependent: :destroy
   has_many :tags, through: :shop_tag_relations
