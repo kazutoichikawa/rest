@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_shop, only:[:show]
   before_action :search_shop, only: [:index, :search]
   def index

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "shops#index"
   get 'search', to: 'shops#search'
   resources :shops do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:index, :new, :create]
     resources :reviews, only: :create
   end
   namespace :admin do

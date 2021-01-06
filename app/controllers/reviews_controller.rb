@@ -1,7 +1,14 @@
 class ReviewsController < ApplicationController
   def create
     @reviews = Review.create(review_params)
-    redirect_to shop_path (params[:shop_id])
+    if @reviews.save
+      redirect_to shop_path (params[:shop_id])
+    else
+      @shop = @review.shop
+      @resviews = @shop.review.includes(:resview)
+      @reservation = Review.new
+      render 'shops/show'
+    end
   end
 
   private

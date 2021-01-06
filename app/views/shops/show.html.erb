@@ -65,25 +65,69 @@
           <div class="shop-profile-title">
             <h2>口コミ</h2>
           </div>
-          <div class="review-box reviews">
+          
             <% @reviews.each do |review| %>
-              <div class="review-text"><%= review.text %></div>
-              <div class="review-user-time">
-                <%= "#{review.user.name}  #{l review.created_at}" %>
+              <div class="review-box reviews">
+                <div class="review-text"><%= review.text %></div>
+                <div class="review-user-time">
+                  <%= "#{review.user.name}  #{l review.created_at}" %>
+                </div>
               </div>
             <% end %>
-          </div>
         </div>
-           <div class="review-form">
-            <% if user_signed_in? %>
-              <%= form_with(model: [@shop, @review], local: true) do |form| %>
-                <%= form.text_area :text, placeholder: "100字以内", class:"review-text", rows: "2" %>
-                <%= form.submit "レビューを投稿する", class: "review-form-button" %>
-              <% end %>
-            <% else %>
-              <div class="review-form">口コミの投稿には新規登録/ログインが必要です</div>
+        <div class="review-form">
+          <% if user_signed_in? %>
+            <%= form_with(model: [@shop, @review], local: true) do |form| %>
+              <div class="form-input">
+                <%= form.text_area :text, placeholder: "100字以内", class: "form-message", rows: "2" %>
+                <%= form.submit "レビューを投稿" , class: "form-submit"%>
+              </div>
             <% end %>
-            </div>
+          <% else %>
+            <div class="review-form">口コミの投稿には新規登録/ログインが必要です</div>
+          <% end %>
+        </div>
+
+        <div class="reservation-form">
+        <div class="shop-profile-title">
+            <h2>予約フォーム</h2>
+          </div>
+          <% if user_signed_in? %>
+            <%= form_with model: [@shop, @reservation], local: true do |f| %>
+            <%= render 'devise/shared/error_messages', model: f.object %>
+              <div class="reservation-input">
+                <div class="form-message">
+                  <div><%= f.label :date, '日付' %></div>
+                  <%= f.date_field :date, class: "reservation date" %>
+                </div>
+                <div class="form-message">
+                  <div><%= f.label :time, '時間' %></div>
+                  <%= f.time_select :time, {start_hour: 11, end_hour: 22, minute_step: 15}, class: "reservation time" %>
+                </div>
+                <div class="form-message">
+                  <div><%= f.label :n_people, '人数'  %></div>
+                  <%= f.select :n_people, [
+                    ["1人", 1],
+                    ["2人", 2],
+                    ["3人", 3],
+                    ["4人", 4],
+                    ["5人", 5],
+                    ["6人", 6],
+                    ["7人", 7],
+                    ["8人", 8],
+                    ["9人", 9],
+                    ["10人以上", 10],
+                    ], include_blank: "選択して下さい", class: "reservation people" %>
+                </div>
+                <div><%= f.submit "この内容で予約" , class: "form-submit"%></div>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="review-form">予約には新規登録/ログインが必要です</div>
+          <% end %>
+        
+        </div>
+
         
 
       <div class="shop-info-box show">
@@ -96,7 +140,6 @@
         <% elsif user_signed_in? %>
           <div class="admin show">
             <div><%= link_to '戻る', root_path, class: "admin-button" %></div>
-            <div><%= link_to 'ネット予約', root_path, class: "admin-button" %></div>
           </div>
         <% else %>
         <% end %>
@@ -104,3 +147,5 @@
     </div>
   </div>
 </div>
+
+<%= render partial: "devise/shared/footer" %>
