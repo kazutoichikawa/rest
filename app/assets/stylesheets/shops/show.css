@@ -70,7 +70,7 @@
 }
 
 .shop-profile-title {
-  margin: 15px 0;
+  margin: 15px 10px 5px 0px;
   border-bottom: solid 1px #666666;
 }
 
@@ -99,7 +99,7 @@
 }
 
 .admin-button {
-  border: solid 2px #666666;
+  border: none;
   border-radius: 10px;
   text-align: center;
   padding: 10px 30px;
@@ -127,16 +127,38 @@
 }
 
 .review-form {
-  text-align: center;
+  height: 90px;
 }
 
-.review-text{
-  height: 38px;
+.form-input {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  
 }
 
-.review-form-button {
-  padding: 5px;
-  margin-left: 5px;
+.form-message {
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+
+.form-submit {
+  border: none;
   color: white;
-  background-color: navy;
+  background-color: brown;
+  font-size: 16px;
+  height: 40px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.reservation-input {
+  display: flex;
+}
+
+.reservation {
+  height: 44px;
+  padding-left: 10px;
 }

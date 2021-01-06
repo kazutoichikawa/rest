@@ -1,6 +1,7 @@
 .main {
   background-color:  #ffcc33;
   width: 100vw;
+  height: 100vh;
   padding: 10px 0;
   display: flex;
   justify-content: space-around;

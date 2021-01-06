@@ -70,9 +70,10 @@
   text-align: center;
 }
 .submit-button {
+  border: none;
   margin-bottom: 10px;
   width: 100px;
   color: white;
-  background-color: navy;
+  background-color: brown;
   border-radius: 10px;
 }
