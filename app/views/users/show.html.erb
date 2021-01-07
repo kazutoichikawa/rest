@@ -8,16 +8,6 @@
     <% if @reservations.present? %>
       <% @reservations.each do |reservation| %>
         <div class="reservation-group">
-          <% unless reservation.date < Date.today %>
-            <div class="reservation-status yet">
-              <%="残り" %><br><%= "#{reservation.date - Date.today}日!!" %>
-            </div>
-          <% else %>
-            <div class="reservation-status gone">
-              <%= "Thanks" %><br>
-              <%= "for using" %>
-            </div>
-          <% end %>
           <div class="reservation-info">
             <div class="reservation-shop-title">
               <%= reservation.shop.shop_name %>
