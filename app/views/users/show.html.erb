@@ -1,0 +1,46 @@
+<%= render partial: "devise/shared/header" %>
+
+<div class="main">
+  <div class="reservation-complete">
+    <div class="reservation-title">
+    <%= "#{@user.l_name + @user.f_name}さんのご予約状況" %>
+    </div>
+    <% if @reservations.present? %>
+      <% @reservations.each do |reservation| %>
+        <div class="reservation-group">
+          <% unless reservation.date < Date.today %>
+            <div class="reservation-status yet">
+              <%="残り" %><br><%= "#{reservation.date - Date.today}日!!" %>
+            </div>
+          <% else %>
+            <div class="reservation-status gone">
+              <%= "Thanks" %><br>
+              <%= "for using" %>
+            </div>
+          <% end %>
+          <div class="reservation-info">
+            <div class="reservation-shop-title">
+              <%= reservation.shop.shop_name %>
+            </div>
+            <div class="reservation-detail">
+              <div class="reservation date">
+              <%= reservation.date.strftime("%Y年%m月%d日").to_s %>
+              </div>
+              <div class="reservation time">
+              <%= reservation.time.strftime("%H時%M分").to_s %>
+              </div>
+              <div class="reservation number-of-people">
+              <%= "#{reservation.n_people}人" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+    <div>現在のご予約はありません</div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= render partial: "devise/shared/footer" %>
