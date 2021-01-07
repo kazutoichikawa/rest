@@ -10,7 +10,7 @@
   <% elsif user_signed_in? %>
     <div class="nav">
       <div class="sign-button"><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "signout button" %></div>
-      <div class="sign-button">予約状況確認</div>
+      <div class="sign-button"><%= link_to '予約確認ページへ', "/users/#{current_user.id}", class: "signout button" %></div>
   </div>
   <% else %>
   <div class="nav">

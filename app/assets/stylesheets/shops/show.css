@@ -138,7 +138,7 @@
 }
 
 .form-message {
-  height: 40px;
+  height: 70px;
   width: 100%;
   padding-left: 10px;
 }
@@ -154,11 +154,15 @@
   padding: 0 20px;
 }
 
-.reservation-input {
-  display: flex;
-}
-
 .reservation {
   height: 44px;
   padding-left: 10px;
+}
+
+.reservation-area {
+  display: flex;
+}
+
+.reservation-button {
+  
 }

@@ -4,7 +4,7 @@
       <h3>予約が完了しました。</h3>
       <div class="update-button">
         <%= link_to 'トップページに戻る', root_path, class: "admin-button" %>
-        <%= link_to '予約確認ページへ', root_path, class: "admin-button" %>
+        <%= link_to '予約確認ページへ', "/users/#{current_user.id}", class: "admin-button" %>
       </div>
     </div>
 </div>

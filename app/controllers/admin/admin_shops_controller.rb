@@ -2,7 +2,6 @@ class Admin::AdminShopsController < ApplicationController
   before_action :if_not_admin
   before_action :set_shop , only:[:edit, :update, :destroy]
   def index
-    
   end
 
   def new
@@ -44,5 +43,4 @@ private
   def set_shop
     @shop = Shop.find(params[:id])
   end
-
 end
