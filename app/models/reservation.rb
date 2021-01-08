@@ -14,5 +14,4 @@ belongs_to :user
     return if date.blank?
     errors.add(:date, "は今日以降のものを選択してください") if date < Date.today
   end
-
 end
