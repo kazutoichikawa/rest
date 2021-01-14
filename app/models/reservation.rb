@@ -12,6 +12,11 @@ belongs_to :user
 
   def if_date_is_tommorrow
     return if date.blank?
-    errors.add(:date, "は今日以降のものを選択してください") if date < Date.today
+    time_aftersix = Time.new + (60*60*6)
+    if date < Date.today
+      errors.add(:date, "現在からの6時間後が予約可能な最短時間です")
+    elsif date == Date.today && time_aftersix > time
+      errors.add(:time, "現在からの6時間後が予約可能な最短時間です")
+    end
   end
 end
