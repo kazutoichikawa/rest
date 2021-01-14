@@ -121,7 +121,7 @@
                       ["10人以上", 10],
                       ], include_blank: "選択して下さい", class: "reservation people" %>
                   </div>
-                  <div><%= f.submit "この内容で予約" , class: "form-submit reservation-button"%></div>
+                  <div><%= f.submit "この内容で予約" , data: { confirm: 'この内容で予約してよろしいですか？'}, class: "form-submit reservation-button"%></div>
                 </div>
               </div>
             <% end %>
