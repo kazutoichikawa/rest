@@ -9,9 +9,9 @@
   </div>
   <% elsif user_signed_in? %>
     <div class="nav">
-      <div class="sign-button"><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "signout button" %></div>
+      <div class="sign-button signout-button"><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "signout button" %></div>
       <div>
-        <div class="sign-button" id="reservation-button">予約確認</div>
+        <div class="sign-button reservation-button" id="reservation-button">予約確認</div>
         <div class="reservation-list hidden" id="pull-down">
           <div class="reservation-title">
             <%= "#{current_user.l_name + current_user.f_name}さんのご予約状況" %>
