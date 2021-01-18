@@ -1,6 +1,5 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:create, :index]
 
   def index
   end
@@ -20,12 +19,4 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:date, :time, :n_people).merge(user_id: current_user.id, shop_id: params[:shop_id])
   end
-  
-  def correct_user
-    @reservation = Reservation.find(params[:shop_id])
-      unless @reservation.user_id == current_user.id
-        redirect_to root_url
-      end
-  end
-
 end
