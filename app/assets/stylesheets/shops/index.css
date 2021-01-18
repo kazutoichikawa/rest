@@ -155,3 +155,46 @@
   display: flex;
   justify-content: left;
 }
+
+.reservation-list {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-color :#EEEEEE;
+  border: 2px solid #666666;
+  border-radius: 10px;
+  padding: 7px;
+  z-index: 30;
+  overflow: scroll;
+}
+li {
+  padding-top: 5px;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.reservation-group {
+  border-bottom: 1px solid #666666;
+}
+
+.reservation-title {
+  font-size: 12px;
+  border-bottom: 1px solid #666666;
+}
+
+.reservation-shop-title {
+  font-size: 10px;
+}
+
+.reservation-detail {
+  font-size: 10px;
+  text-align: left;
+}
+
+.reservation-info {
+  display: flex;
+  justify-content: center;
+}

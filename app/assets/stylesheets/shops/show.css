@@ -155,7 +155,6 @@
 }
 
 .reservation {
-  height: 44px;
   padding-left: 10px;
 }
 
@@ -163,6 +162,6 @@
   display: flex;
 }
 
-.reservation-button {
-  
+.null-message {
+  font-size: 12px;
 }

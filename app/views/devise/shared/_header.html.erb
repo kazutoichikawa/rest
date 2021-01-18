@@ -10,8 +10,40 @@
   <% elsif user_signed_in? %>
     <div class="nav">
       <div class="sign-button"><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "signout button" %></div>
-      <div class="sign-button"><%= link_to '予約確認ページへ', "/users/#{current_user.id}", class: "signout button" %></div>
-  </div>
+      <div>
+        <div class="sign-button" id="reservation-button">予約確認</div>
+        <div class="reservation-list hidden" id="pull-down">
+          <div class="reservation-title">
+            <%= "#{current_user.l_name + current_user.f_name}さんのご予約状況" %>
+            </div>
+              <% if @reservations.present? %>
+                <% @reservations.each do |reservation| %>
+                  <div class="reservation-group">
+                    <div class="reservation-info">
+                      <div class="reservation-shop-title">Shop:
+                        <%= reservation.shop.shop_name %>
+                      </div>
+                      <div class="reservation-detail">
+                        <div class="reservation date">Day:
+                        <%= reservation.date.strftime("%Y年%m月%d日").to_s %>
+                        </div>
+                        <div class="reservation time">Time:
+                        <%= reservation.time.strftime("%H時%M分").to_s %>
+                        </div>
+                        <div class="reservation number-of-people">Person:
+                        <%= "#{reservation.n_people}人" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+              <div class="null-message">---現在のご予約はありません---</div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+      <script src="reservation.js"></script>
   <% else %>
   <div class="nav">
       <div class="sign-button"><%= link_to 'SIGN IN', user_session_path, class: "signup button" %></div>
