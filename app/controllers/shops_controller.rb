@@ -4,9 +4,13 @@ class ShopsController < ApplicationController
   before_action :search_shop, only: [:index, :search]
   def index
     require "date"
-    @reservations = Reservation.where("(user_id = ?) AND (reservations.date > ?)",  current_user.id, Date.today).order(:time)
     @p = Shop.ransack(params[:q])
     @shops = Shop.all.order("created_at DESC")
+
+    if user_signed_in?
+      @reservations = Reservation.where("(user_id = ?) AND (reservations.date > ?)",  current_user.id, Date.today).order(:time)
+    end
+
   end
 
   def show
