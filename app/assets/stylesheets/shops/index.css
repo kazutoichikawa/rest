@@ -22,7 +22,6 @@
 
 .right-area {
   width: 65%;
-  overflow: scroll;
 }
 
 .shop, .search-value {
@@ -37,11 +36,14 @@
 }
 
 .shop-group {
-  height: 100%;
+  overflow: scroll;
+  height: calc(100% - 44px);
+  border-radius: 0 0 10px 10px;
 }
 
 .shop-list{
   width: 100%;
+  border-radius: 0 0 10px 10px;
 }
 
 .shop-detail-group {
@@ -72,12 +74,12 @@
   text-align: center;
 }
 .shop-name {
-  width: 33%;
+  width: 43%;
   border-right: solid 3px #666666;
 }
 
 .genre {
-  width: 30%;
+  width: 20%;
   border-right: solid 3px #666666;
 }
 
@@ -105,6 +107,7 @@
 }
 .tag-list {
   height: 28px;
+  width: 100px;
   padding: 10px 5px 0px 5px;
   margin: 10px 0px 5px 8px;
   font-size: 12px;
