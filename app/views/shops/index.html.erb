@@ -5,7 +5,7 @@
     <div class="form-title">検索フォーム</div>
 
     <div class="search-form">
-      <%= search_form_for @p, url: search_path do |f| %>
+      <%= search_form_for @p, url: shops_path do |f| %>
         <div class="form form-genre">
           <div class="search-form-title"><%= f.label :genre_eq, 'ジャンル' %></div>
           <div class="col-md-4 select">
@@ -22,9 +22,9 @@
           </div>
         </div>
         <div class="form form-tag">
-            <div class="search-form-title"><%= f.label :shop_tag_relations_tag_id_in, 'こだわり条件' %></div>
+            <div class="search-form-title"><%= f.label :shop_tag_relations_tag_in, 'こだわり条件' %></div>
             <div class="col-md-4 checkbox-list">
-            <%= f.collection_check_boxes :shop_tag_relations_tag_id_in, @tags, :id, :name %>
+            <%= f.collection_check_boxes :shop_tag_relations_tag_id_in, @tags, :id, :name, multiple: true%>
             <br>
           </div>
         </div>
@@ -33,13 +33,10 @@
     </div>
   </div>
   <div class="right-area menu">
-    <div class="shop">
       <div class="title">レストラン一覧</div>
-    </div>
-    <div class="search-value"></div>
     <div class="shop-group">
       <div class="shop-list">
-       <% @shops.each do |shop| %>
+       <% @results.each do |shop| %>
         <%= render partial: "shops/shops", locals: {shop: shop} %>
        <% end %>
       </div>
