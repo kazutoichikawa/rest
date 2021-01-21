@@ -35,15 +35,14 @@
   border-bottom: solid 3px #666666;
 }
 
-.shop-group {
+.shop-list{
   overflow: scroll;
-  height: calc(100% - 44px);
+  height: calc(100% - 41px);
   border-radius: 0 0 10px 10px;
 }
 
-.shop-list{
-  width: 100%;
-  border-radius: 0 0 10px 10px;
+.error {
+  height: calc(100% - 138px);
 }
 
 .shop-detail-group {

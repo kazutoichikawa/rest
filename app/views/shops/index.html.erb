@@ -34,12 +34,22 @@
   </div>
   <div class="right-area menu">
       <div class="title">レストラン一覧</div>
-    <div class="shop-group">
-      <div class="shop-list">
-       <% @results.each do |shop| %>
-        <%= render partial: "shops/shops", locals: {shop: shop} %>
-       <% end %>
-      </div>
+        <% if @results.present? %>
+          <ul class='shop-list'>
+            <% @results.each do |shop| %>
+              <%= render partial: "shops/shops", locals: {shop: shop} %>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="error-messages">
+            一致する店舗がありません。条件を変えてもう一度検索してください。
+          </div>
+            <ul class='error shop-list'>
+              <% Shop.all.each do |shop| %>
+                <%= render partial: "shops/shops", locals: {shop: shop} %>
+              <% end %>
+            </ul>
+        <% end %>
     </div>
   </div>
 </div>
