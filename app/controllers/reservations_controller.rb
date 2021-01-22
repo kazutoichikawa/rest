@@ -5,6 +5,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    if user_signed_in?
+      @reservations = Reservation.where("(user_id = ?) AND (reservations.date > ?)",  current_user.id, Date.today).order(:date).order(:time)
+    end
     @reservation = Reservation.create(reservation_params)
     unless @reservation.save
       @shop = @reservation.shop
@@ -12,6 +15,8 @@ class ReservationsController < ApplicationController
       @review = Review.new
       @reviews = @shop.reviews.includes(:shop)
       render 'shops/show'
+    else
+      session[:_csrf_token] = nil
     end
   end
 

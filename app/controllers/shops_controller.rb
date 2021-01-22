@@ -27,7 +27,7 @@ class ShopsController < ApplicationController
 
   def reservation_check
     if user_signed_in?
-      @reservations = Reservation.where("(user_id = ?) AND (reservations.date > ?)",  current_user.id, Date.today).order(:time)
+      @reservations = Reservation.where("(user_id = ?) AND (reservations.date > ?)",  current_user.id, Date.today).order(:date).order(:time)
     end
   end
 end
