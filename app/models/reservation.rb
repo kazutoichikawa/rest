@@ -14,9 +14,9 @@ belongs_to :user
     return if date.blank?
     time_aftersix = Time.new + (60*60*6)
     if date < Date.today
-      errors.add(:date, "現在からの6時間後が予約可能な最短時間です")
+      errors.add(:date, "は現在から6時間後以降で入力してください")
     elsif date == Date.today && time_aftersix > time
-      errors.add(:time, "現在からの6時間後が予約可能な最短時間です")
+      errors.add(:time, "は現在から6時間後以降で入力してください")
     end
   end
 end

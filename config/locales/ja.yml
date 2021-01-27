@@ -9,3 +9,29 @@ ja:
       - :year
       - :month
       - :day
+
+ja:
+  activerecord:
+    attributes:
+      shop:
+        image: 画像
+        shop_name: 店名
+        genre_id: ジャンル
+        profile: 店舗プロフィール
+        p_num: 電話番号
+        p_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市町村
+        address: 番地
+      user:
+        name: 氏名
+        f_name: 名前
+        l_name: 苗字
+        f_name_r: ナマエ
+        l_name_r: ミョウジ
+        birthday: 生年月日
+        p_num: 電話番号
+      reservation:
+        date: 日付
+        n_people: 来店人数
+        time: 予約時間 
