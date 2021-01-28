@@ -67,3 +67,4 @@ gem 'active_hash'
 gem 'ransack'
 gem 'data-confirm-modal'
 gem "aws-sdk-s3", require: false
+gem 'rails-i18n'

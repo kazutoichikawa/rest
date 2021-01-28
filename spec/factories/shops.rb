@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :shop do
-    image           {Faker::Lorem.sentence}
     shop_name       {"テスト"}
     profile         {"テスト"}
     genre_id        {2}
@@ -10,6 +9,10 @@ FactoryBot.define do
     city            {"テスト"}
     address         {"テスト"}
     building        {"テスト"}
+
+    after(:build) do |shop|
+      shop.image.attach(io: File.open('app/assets/images/output-image1.png'), filename: 'default-image.png')
+    end
 
     association :user
   end

@@ -4,9 +4,10 @@ class ReviewsController < ApplicationController
     if @reviews.save
       redirect_to shop_path (params[:shop_id])
     else
-      @shop = @review.shop
-      @resviews = @shop.review.includes(:resview)
-      @reservation = Review.new
+      @shop = Shop.find(params[:shop_id])
+      @reviews = @shop.reviews.includes(:user)
+      @review = Review.new
+      @reservation = Reservation.new
       render 'shops/show'
     end
   end
