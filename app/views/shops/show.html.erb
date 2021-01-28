@@ -77,10 +77,11 @@
         </div>
         <div class="review-form">
           <% if user_signed_in? %>
-            <%= form_with(model: [@shop, @review], local: true) do |form| %>
+            <%= form_with model: [@shop, @review], local: true do |f| %>
+            <%= render 'devise/shared/error_messages', model: f.object %>
               <div class="form-input">
-                <%= form.text_area :text, placeholder: "100字以内", class: "form-message", rows: "2" %>
-                <%= form.submit "レビューを投稿" , class: "form-submit"%>
+                <%= f.text_area :text, placeholder: "100字以内", class: "form-message", rows: "2" %>
+                <%= f.submit "レビューを投稿" , class: "form-submit"%>
               </div>
             <% end %>
           <% else %>
@@ -138,8 +139,8 @@
         <% if user_signed_in? && current_user.admin? %>
           <div class="admin show">
             <div><%= link_to '戻る', root_path, class: "admin-button" %></div>
-            <div><%= link_to '編集', edit_admin_admin_shop_path, class: "admin-button" %></div>
-            <div><%= link_to '削除', admin_admin_shop_path, method: :delete, class: "admin-button" %></div>
+            <div><%= link_to '編集', edit_admin_admin_shop_path(@shop), class: "admin-button" %></div>
+            <div><%= link_to '削除', admin_admin_shop_path(@shop), method: :delete, class: "admin-button" %></div>
           </div>
         <% elsif user_signed_in? %>
           <div class="admin show">

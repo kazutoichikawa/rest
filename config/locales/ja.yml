@@ -35,3 +35,5 @@ ja:
         date: 日付
         n_people: 来店人数
         time: 予約時間 
+      review:
+        text: 口コミ
