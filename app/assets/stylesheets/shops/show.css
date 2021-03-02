@@ -1,5 +1,4 @@
 .main-show {
-  background-color:  #ffcc33;
   width: 100vw;
   padding: 10px 0;
 }
@@ -53,7 +52,7 @@
 
 .shop-image-show {
   margin: 0 auto;
-  width: 80%;
+  height: 300px;
   text-align: center;
   border-radius: 10px;
 }
@@ -121,6 +120,10 @@
   margin: 10px;
 }
 
+.reviews {
+  overflow: scroll;
+}
+
 .review-user-time {
   font-size: 14px;
   text-align: right;
@@ -138,7 +141,7 @@
 }
 
 .form-message {
-  height: 70px;
+  margin-bottom: 8px;
   width: 100%;
   padding-left: 10px;
 }
