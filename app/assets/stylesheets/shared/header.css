@@ -2,16 +2,12 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  background-color:#ffcc33;
-  border-bottom: solid 10px #666666 ;
 }
 
 .title-box a {
   width: 15vw;
   height: 60px;
   margin: 20px 40px;
-  background-color: #ffcc33;
-  border-bottom: solid 3px #666666;
   display: flex;
   font-weight: bold;
   font-size: 40px;
@@ -22,7 +18,7 @@
 .nav {
   width: 450px;
   height: 40px;
-  margin: 40px 40px 20px 0;
+  margin: 40px 100px 20px 0;
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
@@ -30,23 +26,16 @@
   line-height: 20px;
 }
 
-.sign-button{
-  width :140px;
-  padding: 8px;
+.nav-button{
+  width :96px;
+  padding: 8px 30px;
   font-size: 18px;
   font-weight: bold;
-  color: #333333;
-  background: #ffcc33;
+  background-color: #666666;
+  color: white;
   border: 2px solid #666666;
   border-radius: 10px;
   text-align: center;
-}
-
-.reservation-button {
-  margin-right: 95px;
-}
-
-.button {
   text-decoration: none;
 }
 

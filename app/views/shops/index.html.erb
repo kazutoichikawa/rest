@@ -1,9 +1,9 @@
 <%= render partial: "devise/shared/header"%>
+<%= link_to image_tag("main-cover-logo.png", class:"main-cover-logo") %>
 
 <div class="main">
   <div class="left-area menu">
     <div class="form-title">検索フォーム</div>
-
     <div class="search-form">
       <%= search_form_for @p, url: shops_path do |f| %>
         <div class="form form-genre">
@@ -53,5 +53,3 @@
     </div>
   </div>
 </div>
-
-<%= render partial: "devise/shared/footer"%>
