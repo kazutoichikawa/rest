@@ -94,37 +94,35 @@
             <h2>予約フォーム</h2>
           </div>
           <% if user_signed_in? %>
-          <div class="reservation-form">
+          <div class="reservation-area">
             <%= form_with model: [@shop, @reservation], local: true do |f| %>
             <%= render 'devise/shared/error_messages', model: f.object %>
               <div class="reservation-input">
                 <div class="form-message">
-                  <div><%= f.label :date, '日付' %></div>
+                  <%= f.label :date, '日付' %>
                   <%= f.date_field :date, class: "reservation date" %>
                 </div>
                 <div class="form-message">
-                  <div><%= f.label :time, '時間' %></div>
+                  <%= f.label :time, '時間' %>
                   <%= f.time_select :time, {start_hour: 11, end_hour: 22, minute_step: 15}, class: "reservation time" %>
                 </div>
-                <div class="reservation-area">
-                  <div class="form-message">
-                    <div><%= f.label :n_people, '人数'  %></div>
-                    <%= f.select :n_people, [
-                      ["1人", 1],
-                      ["2人", 2],
-                      ["3人", 3],
-                      ["4人", 4],
-                      ["5人", 5],
-                      ["6人", 6],
-                      ["7人", 7],
-                      ["8人", 8],
-                      ["9人", 9],
-                      ["10人以上", 10],
-                      ], include_blank: "選択して下さい", class: "reservation people" %>
-                  </div>
-                  <div><%= f.submit "この内容で予約" , data: { confirm: 'この内容で予約してよろしいですか？'}, class: "form-submit reservation-button"%></div>
+                <div class="form-message">
+                  <%= f.label :n_people, '人数'  %>
+                  <%= f.select :n_people, [
+                    ["1人", 1],
+                    ["2人", 2],
+                    ["3人", 3],
+                    ["4人", 4],
+                    ["5人", 5],
+                    ["6人", 6],
+                    ["7人", 7],
+                    ["8人", 8],
+                    ["9人", 9],
+                    ["10人以上", 10],
+                    ], include_blank: "選択して下さい", class: "reservation people" %>
                 </div>
               </div>
+                  <%= f.submit "この内容で予約" , data: { confirm: 'この内容で予約してよろしいですか？'}, class: "form-submit reservation-button"%>
             <% end %>
           </div>
           <% else %>
@@ -152,5 +150,3 @@
     </div>
   </div>
 </div>
-
-<%= render partial: "devise/shared/footer" %>

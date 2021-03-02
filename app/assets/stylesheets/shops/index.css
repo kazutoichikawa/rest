@@ -186,6 +186,10 @@ li {
   display: none;
 }
 
+.complete {
+ margin: auto;
+}
+
 
 .reservation-group {
   border-bottom: 1px solid #666666;
