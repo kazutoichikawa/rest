@@ -11,8 +11,8 @@
       <div class="shop-tags-show">
       <ul class="tags-show">
           <% @shop.tags.each do |tag| %>
-          <li class="tag-list">
-            <%=tag.name%>
+          <li class="show-tag-list">
+            <%= tag.name %>
           </li>
           <% end %>
       </ul>
@@ -134,7 +134,7 @@
         
 
       <div class="shop-info-box show">
-        <% if user_signed_in? && current_user.admin? %>
+        <% if user_signed_in? && current_user.admin? && current_user.id == @shop.user_id %>
           <div class="admin show">
             <div><%= link_to '戻る', root_path, class: "admin-button" %></div>
             <div><%= link_to '編集', edit_admin_admin_shop_path(@shop), class: "admin-button" %></div>

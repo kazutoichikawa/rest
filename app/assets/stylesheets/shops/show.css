@@ -21,7 +21,7 @@
 }
 
 .tags-show {
-  width: 400px;
+  margin-top: 23px;
   display: flex;
 }
 
@@ -167,4 +167,15 @@
 
 .null-message {
   font-size: 12px;
+}
+
+.show-tag-list{
+  height: 25px;
+  width: 110px;
+  margin: 0 5px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  background-color: #666666
 }

@@ -6,7 +6,7 @@
   <% if user_signed_in? && current_user.admin? %>
   <div class="nav">
       <div>
-      <%= link_to '管理者用ページ', admin_admin_shops_path, class: "nav-button" %>
+      <%= link_to 'オーナー用ページ', admin_admin_shops_path, class: "nav-button" %>
       <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "nav-button" %>
   </div>
   <% elsif user_signed_in? %>
