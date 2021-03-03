@@ -41,7 +41,7 @@
       <span class="indispensable">必須</span>
     </div>
     <div class="col-md-4 checkbox-list">
-      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name ) %>
+      <%= f.collection_select(:tag_id,Tag.all, :id, :name, {}, {class:"select-box", id:"shop-tag"}) %>
     </div>
   </div>
 

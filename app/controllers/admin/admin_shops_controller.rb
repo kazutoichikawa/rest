@@ -37,7 +37,7 @@ private
   end
 
   def shop_params
-    params.require(:shop).permit(:image, :shop_name, :genre_id, :profile, :p_num, :p_code, :prefecture_id, :city, :address, :building, tag_ids: []).merge(user_id: current_user.id)
+    params.require(:shop).permit(:image, :shop_name, :genre_id, :profile, :p_num, :p_code, :prefecture_id, :city, :address, :building, :tag_id).merge(user_id: current_user.id)
   end
 
   def set_shop
