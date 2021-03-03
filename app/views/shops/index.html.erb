@@ -23,9 +23,9 @@
               </div>
             </div>
             <div class="form form-tag">
-                <div class="search-form-title"><%= f.label :shop_tag_relations_tag_in, 'こだわり条件' %></div>
+                <div class="search-form-title"><%= f.label :tag_id, 'こだわり条件' %></div>
                 <div class="col-md-4 checkbox-list">
-                <%= f.collection_select :shop_tag_relations_tag_id_in, @tags, :id, :name, {include_blank: "指定なし"} %>
+                <%= f.collection_select :tag_id_eq, @tags, :id, :name, {include_blank: "指定なし"} %>
                 <br>
               </div>
             </div>

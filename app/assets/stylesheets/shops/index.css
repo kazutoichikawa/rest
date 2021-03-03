@@ -65,7 +65,7 @@
 .title-address-genre {
   margin: auto;
   width: 200px;
-  border-bottom: solid 2px #666666;
+  
 }
 
 
@@ -76,7 +76,11 @@
 }
 .shop-name {
   margin: auto;
-  width: 200px;
+  width: 100px;
+}
+
+.shop-tag {
+  display: flex;
   border-bottom: solid 2px #666666;
 }
 
@@ -116,13 +120,10 @@
 }
 .tag-list {
   height: 25px;
-  width: 98px;
   margin: auto;
   font-size: 12px;
   text-align: center;
-  border-radius: 10px;
-  color: white;
-  background-color: #666666
+  
 }
 
 

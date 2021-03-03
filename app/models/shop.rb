@@ -2,11 +2,10 @@ class Shop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
   belongs_to :prefecture
+  belongs_to :tag
   belongs_to :user
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :shop_tag_relations, dependent: :destroy
-  has_many :tags, through: :shop_tag_relations
   has_one_attached :image
 
     with_options presence: true do

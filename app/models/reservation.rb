@@ -9,7 +9,6 @@ belongs_to :user
   end
   validate :if_date_is_tommorrow
 
-
   def if_date_is_tommorrow
     return if date.blank?
     time_aftersix = Time.new + (60*60*6)

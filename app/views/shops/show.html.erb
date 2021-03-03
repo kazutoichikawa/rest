@@ -10,11 +10,11 @@
       </div>
       <div class="shop-tags-show">
       <ul class="tags-show">
-          <% @shop.tags.each do |tag| %>
-          <li class="show-tag-list">
-            <%= tag.name %>
-          </li>
-          <% end %>
+          
+          <div class="show-tag-list">
+            <%= @shop.tag.name %>
+          </div>
+         
       </ul>
       </div>
     </div>
