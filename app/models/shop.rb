@@ -2,7 +2,8 @@ class Shop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
   belongs_to :prefecture
-  belongs_to :tag
+  has_many :shop_tag_relations, dependent: :destroy
+  has_many :tags, through: :shop_tag_relations
   belongs_to :user
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy
@@ -19,7 +20,6 @@ class Shop < ApplicationRecord
       validates :address
       validates :genre_id
       validates :prefecture_id
-      validates :tag_id
     end
 
     after_commit :add_default_image, only: [:create, :update]
