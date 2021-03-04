@@ -1,0 +1,2 @@
+class ShopCategoryRelation < ApplicationRecord
+end

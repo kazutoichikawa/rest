@@ -19,7 +19,6 @@ class Shop < ApplicationRecord
       validates :address
       validates :genre_id
       validates :prefecture_id
-      validates :tag_id
     end
 
     after_commit :add_default_image, only: [:create, :update]
