@@ -19,5 +19,15 @@ class Shop < ApplicationRecord
       validates :address
       validates :genre_id
       validates :prefecture_id
+      validates :tag_id
+    end
+
+    after_commit :add_default_image, only: [:create, :update]
+
+    def add_default_image
+      unless image.attached?
+        image.attach(io: File.open(Rails.root.join('app/assets/images/test-shop-image.jpg')),
+        filename: 'test-shop-image.jpg')
+      end
     end
 end
