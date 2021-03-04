@@ -2,7 +2,8 @@ class Shop < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
   belongs_to :prefecture
-  has_many :tags, through: :shop_tag_relation, dependent: :destroy
+  has_many :shop_tag_relations, dependent: :destroy
+  has_many :tags, through: :shop_tag_relations
   belongs_to :user
   has_many :reservations, dependent: :destroy
   has_many :reviews, dependent: :destroy

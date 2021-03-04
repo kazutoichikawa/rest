@@ -86,6 +86,8 @@
 
 .genre-address {
   display: flex;
+  border-bottom: solid 2px #666666;
+  margin-bottom: 5px;
 }
 
 .genre {
@@ -113,17 +115,22 @@
   height: 200px;
 }
 
-.shop-tags {
+.tag {
   height: 120px;
   display: flex;
   flex-wrap : wrap;
+  margin: auto;
 }
 .tag-list {
   height: 25px;
-  margin: auto;
+  width: 80px;
+  color: white;
+  background-color: #666666;
+  border-radius: 10px;
+  margin: 0px 5px;
+  padding: 5px 5px 0px 5px;
   font-size: 12px;
   text-align: center;
-  
 }
 
 

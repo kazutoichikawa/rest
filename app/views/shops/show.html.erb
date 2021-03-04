@@ -8,12 +8,13 @@
       <div class="shop-genre-show">
         <%= @shop.genre.name %>
       </div>
-      <div class="shop-tags-show">
+          <div class="shop-tags-show">
       <ul class="tags-show">
-          
-          <div class="show-tag-list">
-            <%= @shop.tag.name %>
-          </div>
+          <% @shop.tags.each do |tag| %>
+          <li class="tag-list">
+            <%=tag.name%>
+          </li>
+          <%end%>
          
       </ul>
       </div>
