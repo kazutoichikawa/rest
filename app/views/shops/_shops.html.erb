@@ -16,14 +16,12 @@
             <div class="index address"><%= shop.prefecture.name %></div>
           </div>
           <div class="shop-tags">
-              <ul class="tag">
-                  <% shop.tags.each do |tag| %>
-                  <li class="tag-list">
-                    <%=tag.name%>
-                  </li>
-                  <%end%>
-              </ul>
-            </div>
+            <% shop.tags.each do |tag| %>
+            <li class="tag-list">
+              <%=tag.name%>
+            </li>
+            <%end%>
+          </div>
         </div>
       </div>
     
